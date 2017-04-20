@@ -1,0 +1,169 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4B698D20-7CDE-4922-94FE-ADE0AC6198D0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SsmProtocol_CE</RootNamespace>
+    <AssemblyName>SsmProtocol-CE</AssemblyName>
+    <ProjectTypeGuids>{4D628B5B-2FBC-4AA6-8C16-197242AEB884};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PlatformFamilyName>PocketPC</PlatformFamilyName>
+    <PlatformID>3C41C503-53EF-4c2a-8DD4-A8217CAD115E</PlatformID>
+    <OSVersion>4.20</OSVersion>
+    <DeployDirSuffix>SsmProtocol_CE</DeployDirSuffix>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FormFactorID>
+    </FormFactorID>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <NativePlatformName>Pocket PC 2003</NativePlatformName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SsmProtocol\AsyncResult.cs">
+      <Link>AsyncResult.cs</Link>
+    </Compile>
+    <Compile Include="..\SsmProtocol\AsyncResultWithTimeout.cs">
+      <Link>AsyncResultWithTimeout.cs</Link>
+    </Compile>
+    <Compile Include="..\SsmProtocol\BlockReadAsyncResult.cs">
+      <Link>BlockReadAsyncResult.cs</Link>
+    </Compile>
+    <Compile Include="..\SsmProtocol\CaptureStream.cs">
+      <Link>CaptureStream.cs</Link>
+    </Compile>
+    <Compile Include="..\SsmProtocol\Conversion.cs">
+      <Link>Conversion.cs</Link>
+    </Compile>
+    <Compile Include="..\SsmProtocol\EcuImage.cs">
+      <Link>EcuImage.cs</Link>
+    </Compile>
+    <Compile Include="..\SsmProtocol\EcuImage2F12785206.cs">
+      <Link>EcuImage2F12785206.cs</Link>
+    </Compile>
+    <Compile Include="..\SsmProtocol\EcuImageRandom.cs">
+      <Link>EcuImageRandom.cs</Link>
+    </Compile>
+    <Compile Include="..\SsmProtocol\EcuImageRange.cs">
+      <Link>EcuImageRange.cs</Link>
+    </Compile>
+    <Compile Include="..\SsmProtocol\ExpressionEvaluator.cs">
+      <Link>ExpressionEvaluator.cs</Link>
+    </Compile>
+    <Compile Include="..\SsmProtocol\GetEcuIdentiferAsyncResult.cs">
+      <Link>GetEcuIdentiferAsyncResult.cs</Link>
+    </Compile>
+    <Compile Include="..\SsmProtocol\InternalLogProfile.cs">
+      <Link>InternalLogProfile.cs</Link>
+    </Compile>
+    <Compile Include="..\SsmProtocol\LogColumn.cs">
+      <Link>LogColumn.cs</Link>
+    </Compile>
+    <Compile Include="..\SsmProtocol\LogProfile.cs">
+      <Link>LogProfile.cs</Link>
+    </Compile>
+    <Compile Include="..\SsmProtocol\LogRow.cs">
+      <Link>LogRow.cs</Link>
+    </Compile>
+    <Compile Include="..\SsmProtocol\MockEcuStream.cs">
+      <Link>MockEcuStream.cs</Link>
+    </Compile>
+    <Compile Include="..\SsmProtocol\MultipleReadAsyncResult.cs">
+      <Link>MultipleReadAsyncResult.cs</Link>
+    </Compile>
+    <Compile Include="..\SsmProtocol\ReadFromStreamAsyncResult.cs">
+      <Link>ReadFromStreamAsyncResult.cs</Link>
+    </Compile>
+    <Compile Include="..\SsmProtocol\ReadOnlyList.cs">
+      <Link>ReadOnlyList.cs</Link>
+    </Compile>
+    <Compile Include="..\SsmProtocol\SamplePacketData.cs">
+      <Link>SamplePacketData.cs</Link>
+    </Compile>
+    <Compile Include="..\SsmProtocol\SerializedColumn.cs">
+      <Link>SerializedColumn.cs</Link>
+    </Compile>
+    <Compile Include="..\SsmProtocol\SsmBasicLogger.cs">
+      <Link>SsmBasicLogger.cs</Link>
+    </Compile>
+    <Compile Include="..\SsmProtocol\SsmInterface.cs">
+      <Link>SsmInterface.cs</Link>
+    </Compile>
+    <Compile Include="..\SsmProtocol\SsmLogger.cs">
+      <Link>SsmLogger.cs</Link>
+    </Compile>
+    <Compile Include="..\SsmProtocol\SsmPacket.cs">
+      <Link>SsmPacket.cs</Link>
+    </Compile>
+    <Compile Include="..\SsmProtocol\SsmPacketParser.cs">
+      <Link>SsmPacketParser.cs</Link>
+    </Compile>
+    <Compile Include="..\SsmProtocol\SsmParameter.cs">
+      <Link>SsmParameter.cs</Link>
+    </Compile>
+    <Compile Include="..\SsmProtocol\SsmParameterDatabase.cs">
+      <Link>SsmParameterDatabase.cs</Link>
+    </Compile>
+    <Compile Include="..\SsmProtocol\StopLoggingAsyncResult.cs">
+      <Link>StopLoggingAsyncResult.cs</Link>
+    </Compile>
+    <Compile Include="..\SsmProtocol\Utility.cs">
+      <Link>Utility.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Condition="'$(TargetFrameworkVersion)' == 'v1.0'" Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.v1.targets" />
+  <Import Condition="'$(TargetFrameworkVersion)' == 'v2.0'" Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}">
+        <HostingProcess disable="1" />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Import Condition="'$(TargetFrameworkVersion)' == 'v3.5'" Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
+</Project>

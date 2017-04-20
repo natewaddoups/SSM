@@ -1,0 +1,264 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="NateW.Ssm.ApplicationUI.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="CarPC" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="WindowLeft" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="WindowTop" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="WindowWidth" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">800</Value>
+    </Setting>
+    <Setting Name="WindowHeight" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">600</Value>
+    </Setting>
+    <Setting Name="SsmPort" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Mock ECU</Value>
+    </Setting>
+    <Setting Name="Main1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">P58,AFR</Value>
+    </Setting>
+    <Setting Name="Main2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">P12,g/s</Value>
+    </Setting>
+    <Setting Name="Main3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">P200,g/rev</Value>
+    </Setting>
+    <Setting Name="Main4" Type="System.String" Scope="User">
+      <Value Profile="(Default)">P25,psi</Value>
+    </Setting>
+    <Setting Name="Main5" Type="System.String" Scope="User">
+      <Value Profile="(Default)">P79,F</Value>
+    </Setting>
+    <Setting Name="Main6" Type="System.String" Scope="User">
+      <Value Profile="(Default)">P11,F</Value>
+    </Setting>
+    <Setting Name="FTrim1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">E44,%</Value>
+    </Setting>
+    <Setting Name="FTrim2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">E45,%</Value>
+    </Setting>
+    <Setting Name="FTrim3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">P12,g/s</Value>
+    </Setting>
+    <Setting Name="FTrim4" Type="System.String" Scope="User">
+      <Value Profile="(Default)">E46,%</Value>
+    </Setting>
+    <Setting Name="FTrim5" Type="System.String" Scope="User">
+      <Value Profile="(Default)">E47,%</Value>
+    </Setting>
+    <Setting Name="FTrim6" Type="System.String" Scope="User">
+      <Value Profile="(Default)">P3,%</Value>
+    </Setting>
+    <Setting Name="Timing1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">P10,degrees</Value>
+    </Setting>
+    <Setting Name="Timing2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">E53,degrees</Value>
+    </Setting>
+    <Setting Name="Timing3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">E40,degrees</Value>
+    </Setting>
+    <Setting Name="Timing4" Type="System.String" Scope="User">
+      <Value Profile="(Default)">E94,degrees</Value>
+    </Setting>
+    <Setting Name="Timing5" Type="System.String" Scope="User">
+      <Value Profile="(Default)">E95,degrees</Value>
+    </Setting>
+    <Setting Name="Timing6" Type="System.String" Scope="User">
+      <Value Profile="(Default)">E31,multiplier</Value>
+    </Setting>
+    <Setting Name="Boost1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">E90,psi relative sea level</Value>
+    </Setting>
+    <Setting Name="Boost2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">E35,psi</Value>
+    </Setting>
+    <Setting Name="Boost3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">P36,%</Value>
+    </Setting>
+    <Setting Name="Boost4" Type="System.String" Scope="User">
+      <Value Profile="(Default)">P25,psi</Value>
+    </Setting>
+    <Setting Name="Boost5" Type="System.String" Scope="User">
+      <Value Profile="(Default)">E79,absolute %</Value>
+    </Setting>
+    <Setting Name="Boost6" Type="System.String" Scope="User">
+      <Value Profile="(Default)">E80,absolute %</Value>
+    </Setting>
+    <Setting Name="Roughness1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">P63,misfire count</Value>
+    </Setting>
+    <Setting Name="Roughness2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">P64,misfire count</Value>
+    </Setting>
+    <Setting Name="Roughness3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">P2,F</Value>
+    </Setting>
+    <Setting Name="Roughness4" Type="System.String" Scope="User">
+      <Value Profile="(Default)">P69,misfire count</Value>
+    </Setting>
+    <Setting Name="Roughness5" Type="System.String" Scope="User">
+      <Value Profile="(Default)">P70,misfire count</Value>
+    </Setting>
+    <Setting Name="Roughness6" Type="System.String" Scope="User">
+      <Value Profile="(Default)">P8,rpm</Value>
+    </Setting>
+    <Setting Name="A1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">P30,%</Value>
+    </Setting>
+    <Setting Name="A2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">E84,estimated AFR</Value>
+    </Setting>
+    <Setting Name="A3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">P47,%</Value>
+    </Setting>
+    <Setting Name="A4" Type="System.String" Scope="User">
+      <Value Profile="(Default)">E93,%</Value>
+    </Setting>
+    <Setting Name="A5" Type="System.String" Scope="User">
+      <Value Profile="(Default)">P58,AFR</Value>
+    </Setting>
+    <Setting Name="A6" Type="System.String" Scope="User">
+      <Value Profile="(Default)">P201,%</Value>
+    </Setting>
+    <Setting Name="B1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">P49,degrees</Value>
+    </Setting>
+    <Setting Name="B2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">P48,degrees</Value>
+    </Setting>
+    <Setting Name="B3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">P8,rpm</Value>
+    </Setting>
+    <Setting Name="B4" Type="System.String" Scope="User">
+      <Value Profile="(Default)">P40,V</Value>
+    </Setting>
+    <Setting Name="B5" Type="System.String" Scope="User">
+      <Value Profile="(Default)">P39,V</Value>
+    </Setting>
+    <Setting Name="B6" Type="System.String" Scope="User">
+      <Value Profile="(Default)">P200,g/rev</Value>
+    </Setting>
+    <Setting Name="MaxRpm" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">7000</Value>
+    </Setting>
+    <Setting Name="MaxMafGS" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">275</Value>
+    </Setting>
+    <Setting Name="MaxAbsoluteBoostBar" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">3.0</Value>
+    </Setting>
+    <Setting Name="MaxLoadGRev" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">3.0</Value>
+    </Setting>
+    <Setting Name="ColorNormalButtonTop" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#0000FF</Value>
+    </Setting>
+    <Setting Name="ColorNormalButtonBottom" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#000040</Value>
+    </Setting>
+    <Setting Name="ColorNormalButtonText" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#808080</Value>
+    </Setting>
+    <Setting Name="ColorSelectedButtonTop" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#8080FF</Value>
+    </Setting>
+    <Setting Name="ColorSelectedButtonBottom" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#000080</Value>
+    </Setting>
+    <Setting Name="ColorSelectedButtonText" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#FFFFFF</Value>
+    </Setting>
+    <Setting Name="ColorLinesBetweenButtons" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#000000</Value>
+    </Setting>
+    <Setting Name="ColorSixPackMajorText" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#FFFFFF</Value>
+    </Setting>
+    <Setting Name="ColorSixPackMinorText" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#808080</Value>
+    </Setting>
+    <Setting Name="ColorSixPackHorizontalLine" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#FFFFFF</Value>
+    </Setting>
+    <Setting Name="ColorSixPackVerticalLines" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#808080</Value>
+    </Setting>
+    <Setting Name="ColorScatterPlotForeground" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#ffffff</Value>
+    </Setting>
+    <Setting Name="ColorScatterPlotHighlightInner" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#ffffff</Value>
+    </Setting>
+    <Setting Name="ColorScatterPlotHighlightOuter" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#000000</Value>
+    </Setting>
+    <Setting Name="ColorScatterPlotText" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#ffff00</Value>
+    </Setting>
+    <Setting Name="ColorCommonBackground" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#000000</Value>
+    </Setting>
+    <Setting Name="ColorCommonAxisLines" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#ffffff</Value>
+    </Setting>
+    <Setting Name="ColorCommonAxisText" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#ffffff</Value>
+    </Setting>
+    <Setting Name="ColorCommonAxisHighlight" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#000080</Value>
+    </Setting>
+    <Setting Name="ColorHeatMapForeground" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#0000FF</Value>
+    </Setting>
+    <Setting Name="ColorHeatMapHighlight" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#ff0000</Value>
+    </Setting>
+    <Setting Name="ColorHeatMapCellText" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#ffffff</Value>
+    </Setting>
+    <Setting Name="ColorHeatMapOverlayText" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#ffff00</Value>
+    </Setting>
+    <Setting Name="BackButton" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Minimize</Value>
+    </Setting>
+    <Setting Name="PlxPort" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ParameterActualAfr" Type="System.String" Scope="User">
+      <Value Profile="(Default)">P58,AFR</Value>
+    </Setting>
+    <Setting Name="ParameterMaf" Type="System.String" Scope="User">
+      <Value Profile="(Default)">P12,g/s</Value>
+    </Setting>
+    <Setting Name="ParameterDesiredAfr" Type="System.String" Scope="User">
+      <Value Profile="(Default)">E84,estimated AFR</Value>
+    </Setting>
+    <Setting Name="ParameterRpm" Type="System.String" Scope="User">
+      <Value Profile="(Default)">P8,rpm</Value>
+    </Setting>
+    <Setting Name="ParameterThrottle" Type="System.String" Scope="User">
+      <Value Profile="(Default)">P13,%</Value>
+    </Setting>
+    <Setting Name="ParameterMrp" Type="System.String" Scope="User">
+      <Value Profile="(Default)">P25,psi</Value>
+    </Setting>
+    <Setting Name="ParameterLoad" Type="System.String" Scope="User">
+      <Value Profile="(Default)">P200,g/rev</Value>
+    </Setting>
+    <Setting Name="ParameterMap" Type="System.String" Scope="User">
+      <Value Profile="(Default)">P7,bar</Value>
+    </Setting>
+    <Setting Name="ParameterKnockSum" Type="System.String" Scope="User">
+      <Value Profile="(Default)">E114,count</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

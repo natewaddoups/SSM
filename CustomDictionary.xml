@@ -1,0 +1,19 @@
+<Dictionary>
+      <Words>
+         <Recognized>
+            <Word>Ssm</Word>
+            <Word>Plx</Word>
+            <Word>Afr</Word>
+            <Word>Cng</Word>
+         </Recognized>
+         <Deprecated>
+            <Term PreferredAlternate="EnterpriseServices">ComPlus</Term>
+         </Deprecated>
+      </Words>
+      <Acronyms>
+         <CasingExceptions>
+            <Acronym>CJK</Acronym>
+            <Acronym>Pi</Acronym>
+         </CasingExceptions>
+      </Acronyms>
+   </Dictionary>

@@ -1,0 +1,32 @@
+1.0.0   First release, supports basic data logging
+1.2.26  Added support for defogger-controlled and fuel-mode-controlled logging
+1.3.3   Added TreeHugger project
+1.3.4   Fixed a small but serious bug
+1.4.0   TreeHugger reliably restarts after ECU disconnect, sleep, car restart, or hibernation.
+1.5.0   Added SawMill.
+1.5.1   Mistakes were made.
+1.6.0   Added Knock screen, updated to Sept '08 logger definitions, removed TreeHugger.
+1.6.X   Various bug fixes, mostly in Lumberjack, mostly related to first-run issues.
+1.7.0   More Lumberjack fixes.  
+        Lumberjack autmatically selects defogger, etc, if needed for logging mode.
+        SawMill will copy to clipboard with control-C
+1.8.0   Added multi-level screen selection, and more 6-pack screens.
+        ECU sync errors are now displayed as "DANGER TO MANIFOLD"
+        Fixed an atomiticity problem in timeout logic.
+1.9.0   Lumberjack no longer shows parameters that the ECU does not support.
+2.0.0   Added support for PLX Devices SM-AFR and SM-EGT sensors.
+        SawMill now has configurable colors.
+        All of SawMill's logging parameters can now be adjusted via the config file.
+2.0.1   Bug fixes in Lumberjack - it remembers the PLX serial port, doesn't lose profile settings randomly.
+2.0.2   Changed colors on Lumberjack's display screen to be less distracting at night.
+2.0.3   CSV files now include name of log profile.
+        Logging mode is retained when changing profiles.
+2.1.0   Alpha-grade support for OpenPort 2.0
+2.1.1   Fixed bug w.r.t. minimizing Lumberjack while logging.
+2.1.2   Fixed bug w.r.t. retaining logging mode when switching ports.
+        Made 'defogger' the default logging mode.
+        Integrated Merchgod's new logger definitions (Thanks, Merchgod!).
+2.1.3   Added double-click-to-reset for scatter plots and heat maps.   
+2.1.4   Lumberjack sorts parameters alphabetically by default     
+        
+        

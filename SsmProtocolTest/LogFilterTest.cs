@@ -225,5 +225,11 @@ namespace NateW.Ssm.Protocol.Test
             actual = Encoding.ASCII.GetString(memoryStream3.ToArray());
             Assert.AreEqual(expected, actual, "second log");
         }
+
+        [TestMethod()]
+        public void LogFilterPrepend
+        {
+
+        }
     }
 }

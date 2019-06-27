@@ -70,7 +70,8 @@ namespace NateW.Ssm.ApplicationLogic
 
         public static string GetStringValue(string valueName)
         {
-            return Configuration.GetInstance().GetValue(valueName);
+            Configuration configuration = Configuration.GetInstance();
+            return configuration.GetValue(valueName);
         }
 
         public bool Validate()

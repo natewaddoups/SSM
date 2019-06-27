@@ -234,7 +234,8 @@ namespace NateW.Ssm.Protocol.Test
             IList<int> actual = logger.Addresses;
             IList<int> expected = new int[]
             {
-                9, 10, 8, 14, 15, 17, 18, 13, 16
+                // 9, 10, 8, 14, 15, 17, 18, 13, 16
+                8, 9, 10, 13, 14, 15, 16, 17, 18,
             };
 
             Assert.AreEqual(expected.Count, actual.Count, "Addresses.Length");

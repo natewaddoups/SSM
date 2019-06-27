@@ -17,7 +17,7 @@ namespace SawMillCoreTest
     {
         public SawMillTest()
         {
-            SsmDisplayTest.Utility.CopyConfigurationFiles();
+//            SsmDisplayTest.Utility.CopyConfigurationFiles();
         }
 
         private TestContext testContextInstance;
@@ -44,14 +44,14 @@ namespace SawMillCoreTest
             List<SawMillScreen> screens = new List<SawMillScreen>();
             screens.Add(new RpmMafScreen(7100f, 250f));
             screens.Add(new RpmLoadScreen(7100f, 2.5f));
-            SawMill sawMill1 = SawMill.GetInstance(Environment.CurrentDirectory, "Mock ECU", screens, this.Update);
+            SawMill sawMill1 = SawMill.GetInstance(Environment.CurrentDirectory, "Mock ECU", null, screens, this.Update);
 
             MemoryStream stream = new MemoryStream();
             sawMill1.WriteTo(stream);
 
             stream.Position = 0;
 
-            SawMill sawMill2 = SawMill.GetInstance(Environment.CurrentDirectory, "Mock ECU", screens, this.Update);
+            SawMill sawMill2 = SawMill.GetInstance(Environment.CurrentDirectory, "Mock ECU", null, screens, this.Update);
             sawMill2.ReadFrom(stream);            
 
             // TODO: verify consistency of data
@@ -62,14 +62,14 @@ namespace SawMillCoreTest
         {
             List<SawMillScreen> screens = new List<SawMillScreen>();
             screens.Add(new VEScreen(7100, 2.5f));
-            SawMill sawMill1 = SawMill.GetInstance(Environment.CurrentDirectory, "Mock ECU", screens, this.Update);
+            SawMill sawMill1 = SawMill.GetInstance(Environment.CurrentDirectory, "Mock ECU", null, screens, this.Update);
 
             MemoryStream stream = new MemoryStream();
             sawMill1.WriteTo(stream);
 
             stream.Position = 0;
 
-            SawMill sawMill2 = SawMill.GetInstance(Environment.CurrentDirectory, "Mock ECU", screens, this.Update);
+            SawMill sawMill2 = SawMill.GetInstance(Environment.CurrentDirectory, "Mock ECU", null, screens, this.Update);
             sawMill2.ReadFrom(stream);
 
             // TODO: verify consistency of data

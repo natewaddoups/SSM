@@ -22,7 +22,7 @@ namespace NateW.Ssm
     {
         public const string OpenPort20DisplayName = "OpenPort 2.0";
         public const string MockEcuDisplayName = "Mock ECU";
-        private const string OpenPort20PortName = "op20pt32.dll";
+        public const string OpenPort20PortName = "op20pt32.dll";
         
         /// <summary>
         /// Find out if the OpenPort 2.0 DLL is available.

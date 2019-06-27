@@ -125,8 +125,7 @@ namespace NateW.Ssm
         /// </summary>
         public static readonly string FileDialogFilterString = string.Format(
             CultureInfo.InvariantCulture,
-            "Profiles (*{0})|*{0}|All Files (*.*)|*.*", 
-            SsmBasicLogger.DefaultProfileExtension, 
+            "Profiles (*{0})|*{0}|All Files (*.*)|*.*",
             SsmBasicLogger.DefaultProfileExtension);
 
         /// <summary>

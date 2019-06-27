@@ -45,3 +45,16 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+ 
+.gitignore
+NateW.snk
+*/bin/
+*/obj/
+*/Debug/
+.vs/
+*.pfx
+.gitconfig
+SsmApps.zip
+SsmApps/
+CopyBinaries.bat
+TestResults/

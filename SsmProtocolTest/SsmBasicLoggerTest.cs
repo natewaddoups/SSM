@@ -215,7 +215,7 @@ namespace NateW.Ssm.Protocol.Test
             ParameterDatabase database = ParameterDatabase.GetInstance();
             database.Add(source);
 
-            LogProfile profile = LogProfile.CreateInstance();            
+            LogProfile profile = LogProfile.CreateInstance();
             foreach (SsmParameter parameter in database.Parameters)
             {
                 profile.Add(parameter, parameter.Conversions[0]);
@@ -224,13 +224,15 @@ namespace NateW.Ssm.Protocol.Test
                     break;
                 }
             }
+
             logger.SetProfile(profile, database);
             IList<int> actual = logger.Addresses;
 
             // Note that parameters get re-ordered alphabetically
             IList<int> expected = new int[]
             {
-                9, 10, 8, 14, 15, 17, 18, 13, 16,
+                // 9, 10, 8, 14, 15, 17, 18, 13, 16,
+                8, 9, 10, 13, 14, 15, 16, 17, 18, 
             };
 
             Assert.AreEqual(expected.Count, actual.Count, "Addresses.Length");

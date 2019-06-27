@@ -119,6 +119,7 @@ namespace NateW.Ssm.ApplicationLogic
                 this.ui.AddSsmSerialPort(name);
                 this.ui.AddPlxSerialPort(name);
             }
+
             ignoreSerialPortChangeNotifications = false;
         }
 

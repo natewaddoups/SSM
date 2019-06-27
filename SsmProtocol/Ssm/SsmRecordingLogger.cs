@@ -278,40 +278,6 @@ namespace NateW.Ssm
             this.SetProfile(this.currentProfile);
         }
 
-        /* Not used - may not be necessary after all.
-         * 
-        public LogFilterType GetLogFilterType()
-        {
-            if (this.filter == null)
-            {
-                return LogFilterType.AlwaysLog;
-            }
-
-            switch (this.filter.GetType())
-            {
-                case typeof(NeverLogFilter);
-                    return LogFilterType.NeverLog;
-
-                case typeof (AlwaysLogFilter):
-                    return LogFilterType.AlwaysLog;
-
-                case typeof(DefoggerLogFilter):
-                    return LogFilterType.Defogger;
-
-                case typeof(OpenLoopLogFilter):
-                    return LogFilterType.OpenLoop;
-
-                case typeof(ClosedLoopLogFilter):
-                    return LogFilterType.ClosedLoop;
-
-                case (FullThrottleLogFilter):
-                    return LogFilterType.FullThrottle;
-
-            default:
-                    throw new InvalidOperationException("Unexpected log filter type: " + this.filter.GetType().FullName);
-            }
-        }*/
-
         /// <summary>
         /// Starts logging
         /// </summary>

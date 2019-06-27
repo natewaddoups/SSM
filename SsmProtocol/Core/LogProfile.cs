@@ -119,6 +119,7 @@ namespace NateW.Ssm
             LogColumn column = LogColumn.GetInstance(parameter, conversion, null, false);
             for (int i = 0; i < this.columns.Count; i++)
             {
+/* Not sure what I had in mind for this, but it breaks the SawMill UI:
                 LogColumn candidate = this.columns[i];
                 if (string.Compare(
                     parameter.Name, 
@@ -128,6 +129,7 @@ namespace NateW.Ssm
                     this.columns.Insert(i, column);
                     return;
                 }
+*/
             }
             this.columns.Add(column);
         }

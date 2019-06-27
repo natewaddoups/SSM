@@ -287,7 +287,7 @@ namespace NateW.Ssm
             {
                 if ((this.Command != SsmCommand.ReadAddressesResponse) && (this.Command != SsmCommand.ReadBlockResponse))
                 {
-                    Console.WriteLine("Packet command is {0}/(1)", (int)this.Command, this.Command);
+                    Console.WriteLine("Packet command is {0}/{1}", (int)this.Command, this.Command);
                     //throw new InvalidOperationException("SsmPacket.Addresses is only valid for read-addresses and read-block responses");
                 }
 

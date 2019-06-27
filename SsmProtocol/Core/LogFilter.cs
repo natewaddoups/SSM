@@ -136,11 +136,14 @@ namespace NateW.Ssm
                 {
                     this.writer = this.factory();
                     this.writer.LogStart(row);
+
+                    // TODO: Begin log with queue
                 }
                 return true;
             }
             else
             {
+                // TODO: enqueue 
                 this.SafelyDisposeWriter();
                 return false;
             }

@@ -175,9 +175,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="NateW.snk" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\J2534\J2534.csproj">
       <Project>{E524FB04-7F42-4830-BA00-F09CDAB7C1CE}</Project>
       <Name>J2534</Name>

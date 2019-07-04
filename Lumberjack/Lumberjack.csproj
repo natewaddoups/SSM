@@ -31,7 +31,8 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <SignAssembly>false</SignAssembly>
-    <AssemblyOriginatorKeyFile>NateW-2.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -132,8 +133,6 @@
     </Compile>
     <None Include="app.config" />
     <None Include="Lumberjack.exe.config" />
-    <None Include="NateW-2.pfx" />
-    <None Include="NateW.snk" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LumberjackCore\LumberjackCore.csproj">

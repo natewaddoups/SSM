@@ -227,7 +227,7 @@ namespace NateW.Ssm.Protocol.Test
         }
 
         [TestMethod()]
-        public void LogFilterPrepend
+        public void LogFilterPrepend()
         {
 
         }

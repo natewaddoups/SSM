@@ -72,7 +72,7 @@ namespace NateW.Ssm
         /// Write the names of the colums
         /// </summary>
         /// <param name="row">collection of columns, values, and conversions</param>
-        public void LogStart(LogRow row)
+        public void LogStart(ILogRow row)
         {
             this.startTime = DateTime.Now;
 
@@ -82,8 +82,7 @@ namespace NateW.Ssm
                 extraColumns = 2;
             }
 
-            // TODO: Cleanup: just use a List<string>
-            string[] names = new string[row.Columns.Count + extraColumns];
+            string[] names = new string[row.ColumnCount + extraColumns];
 
             if (this.insertTimeColumns)
             {
@@ -92,9 +91,9 @@ namespace NateW.Ssm
             }
 
             int i = extraColumns;
-            foreach (LogColumn column in row.Columns)
+            for(int index = 0; index < row.ColumnCount; index++)
             {
-                names[i] = column.Parameter.Name;
+                names[i] = row.GetColumnName(index);
                 i++;
             }
 
@@ -106,7 +105,7 @@ namespace NateW.Ssm
         /// Write values from the given log entry to the stream
         /// </summary>
         /// <param name="row">collection of columns, values, and conversions</param>
-        public void LogEntry(LogRow row)
+        public void LogEntry(ILogRow row)
         {
             int extraColumns = 0;
             if (this.insertTimeColumns)

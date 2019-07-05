@@ -16,12 +16,52 @@ namespace NateW.Ssm
     /// <returns>an instance of LogWriter</returns>
     public delegate LogWriter LogWriterFactory();
 
+    public class HistoryRow : ILogRow
+    {
+        private string[] data;
+
+        /// <summary>
+        /// Gets the number of columms.
+        /// </summary>
+        public int ColumnCount
+        {
+            get
+            {
+                return this.data.Length;
+            }
+        }
+
+        public HistoryRow(LogRow row)
+        {
+            this.data = new string[row.Columns.Count];
+            for (int index = 0; index < row.Columns.Count; index++)
+            {
+                this.data[index] = row.Columns[index].ValueAsString;
+            }
+        }
+        
+        /// <summary>
+        /// Gets the value of a column in string form.
+        /// </summary>
+        /// <param name="index">Index of the desired column.</param>
+        /// <returns>Value in string form.</returns>
+        public string GetColumnValueAsString(int index)
+        {
+            return this.data[index];
+        }
+    }
+
     /// <summary>
     /// Writes logs only when specified conditions are met
     /// </summary>
     /// <remarks>This is the key thing for defogger-controlled logging.</remarks>
     public class LogFilter
     {
+        /// <summary>
+        /// Number of rows to log before and after filter criteria are met.
+        /// </summary>
+        private const int extraRows = 10;
+
         /// <summary>
         /// For testability
         /// </summary>
@@ -48,6 +88,11 @@ namespace NateW.Ssm
         private Conversion conversion;
 
         /// <summary>
+        /// Queue of recent log entries, to be written at the start of each segment.
+        /// </summary>
+        private Queue<LogRow> queue;
+
+        /// <summary>
         /// 
         /// </summary>
         internal Parameter Parameter { get { return this.parameter; } }
@@ -65,6 +110,7 @@ namespace NateW.Ssm
             this.factory = factory;
             this.parameter = parameter;
             this.conversion = conversion;
+            this.queue = new Queue<LogRow>(extraRows);
         }
 
         /// <summary>
@@ -135,15 +181,34 @@ namespace NateW.Ssm
                 if (this.writer == null)
                 {
                     this.writer = this.factory();
-                    this.writer.LogStart(row);
 
-                    // TODO: Begin log with queue
+                    if (this.queue.Count == 0)
+                    {
+                        this.writer.LogStart(row);
+                    }
+                    else
+                    {
+                        this.writer.LogStart(this.queue.Dequeue());
+
+                        while (this.queue.Count > 0)
+                        {
+                            this.writer.LogEntry(this.queue.Dequeue());
+                        }
+                        
+                        this.writer.LogEntry(row);
+                    }
                 }
                 return true;
             }
             else
             {
-                // TODO: enqueue 
+                // Keep the values from the most recent N rows in the queue for later replay.
+                this.queue.Enqueue(new HistoryRow(row));
+                if (this.queue.Count > extraRows)
+                {
+                    this.queue.Dequeue();
+                }
+
                 this.SafelyDisposeWriter();
                 return false;
             }

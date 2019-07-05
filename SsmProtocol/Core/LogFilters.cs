@@ -303,4 +303,61 @@ namespace NateW.Ssm
             return (column.ValueAsDouble > 98.0d);
         }
     }
+
+
+    /// <summary>
+    /// Log when knock sum changes
+    /// </summary>
+    public class KnockLogFilter : LogFilter
+    {
+        private double lastValue;
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        private KnockLogFilter(
+            LogWriterFactory factory,
+            Parameter parameter,
+            Conversion conversion)
+            : base(
+            factory,
+            parameter,
+            conversion)
+        {
+        }
+
+        /// <summary>
+        /// Factory
+        /// </summary>
+        public static LogFilter GetInstance(
+            LogWriterFactory factory,
+            ParameterDatabase database)
+        {
+            Parameter parameter;
+            Conversion conversion;
+            if (database.TryGetParameterById("E114", out parameter) &&
+                parameter.TryGetConversionByUnits("%", out conversion))
+            {
+                return new KnockLogFilter(factory, parameter, conversion);
+            }
+            else
+            {
+                return new LogFilter(factory, null, null);
+            }
+        }
+
+        /// <summary>
+        /// Log when throttle is maxed out
+        /// </summary>
+        protected override bool ShouldLog(LogColumn column)
+        {
+            if (column.ValueAsDouble != this.lastValue)
+            {
+                this.lastValue = column.ValueAsDouble;
+                return true;                
+            }
+
+            return false;
+        }
+    }
 }

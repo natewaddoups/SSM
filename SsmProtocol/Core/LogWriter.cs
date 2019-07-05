@@ -113,7 +113,7 @@ namespace NateW.Ssm
                 extraColumns = 2;
             }
 
-            string[] values = new string[row.Columns.Count + extraColumns];
+            string[] values = new string[row.ColumnCount + extraColumns];
 
             if (this.insertTimeColumns)
             {
@@ -123,9 +123,9 @@ namespace NateW.Ssm
             }
 
             int i = extraColumns;
-            foreach (LogColumn column in row.Columns)
+            for (int index = 0; index < row.ColumnCount; index++)
             {
-                values[i] = column.ValueAsString;
+                values[i] = row.GetColumnValueAsString(index);
                 i++;
             }
 

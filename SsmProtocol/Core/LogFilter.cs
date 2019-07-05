@@ -16,9 +16,14 @@ namespace NateW.Ssm
     /// <returns>an instance of LogWriter</returns>
     public delegate LogWriter LogWriterFactory();
 
+    /// <summary>
+    /// The LogRow instance in logger events is re-used across events so the 
+    /// values need to be stored elsewhere in order to be prepended to logs.
+    /// </summary>
     public class HistoryRow : ILogRow
     {
-        private string[] data;
+        private string[] names;
+        private string[] values;
 
         /// <summary>
         /// Gets the number of columms.
@@ -27,19 +32,39 @@ namespace NateW.Ssm
         {
             get
             {
-                return this.data.Length;
+                return this.values.Length;
             }
         }
 
+        /// <summary>
+        /// Create a HistoryRow from the given LogRow.
+        /// </summary>
+        /// <param name="row"></param>
         public HistoryRow(LogRow row)
         {
-            this.data = new string[row.Columns.Count];
+            this.names = new string[row.ColumnCount];
+            for (int index = 0; index < row.ColumnCount; index++)
+            {
+                this.names[index] = row.Columns[index].Parameter.Name;
+            }
+
+            this.values = new string[row.ColumnCount];
             for (int index = 0; index < row.Columns.Count; index++)
             {
-                this.data[index] = row.Columns[index].ValueAsString;
+                this.values[index] = row.Columns[index].ValueAsString;
             }
         }
-        
+
+        /// <summary>
+        /// Gets the name of a column.
+        /// </summary>
+        /// <param name="index">Index of the desired column.</param>
+        /// <returns>Name of the column.</returns>
+        public string GetColumnName(int index)
+        {
+            return this.names[index];
+        }
+
         /// <summary>
         /// Gets the value of a column in string form.
         /// </summary>
@@ -47,7 +72,7 @@ namespace NateW.Ssm
         /// <returns>Value in string form.</returns>
         public string GetColumnValueAsString(int index)
         {
-            return this.data[index];
+            return this.values[index];
         }
     }
 
@@ -90,7 +115,7 @@ namespace NateW.Ssm
         /// <summary>
         /// Queue of recent log entries, to be written at the start of each segment.
         /// </summary>
-        private Queue<LogRow> queue;
+        private Queue<ILogRow> queue;
 
         /// <summary>
         /// 
@@ -110,7 +135,7 @@ namespace NateW.Ssm
             this.factory = factory;
             this.parameter = parameter;
             this.conversion = conversion;
-            this.queue = new Queue<LogRow>(extraRows);
+            this.queue = new Queue<ILogRow>(extraRows);
         }
 
         /// <summary>
@@ -188,14 +213,14 @@ namespace NateW.Ssm
                     }
                     else
                     {
-                        this.writer.LogStart(this.queue.Dequeue());
+                        ILogRow first = this.queue.Dequeue();
+                        this.writer.LogStart(first);
+                        this.writer.LogEntry(first);
 
                         while (this.queue.Count > 0)
                         {
                             this.writer.LogEntry(this.queue.Dequeue());
                         }
-                        
-                        this.writer.LogEntry(row);
                     }
                 }
                 return true;

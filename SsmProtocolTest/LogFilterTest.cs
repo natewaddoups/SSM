@@ -170,13 +170,13 @@ namespace NateW.Ssm.Protocol.Test
                 },
                 column.Parameter, 
                 column.Conversion,
-                "1");
+                "3");
 
             foreach (LogColumn tempColumn in this.readOnlyColumns)
             {
                 string value;
                 double unused;
-                tempColumn.Conversion.Convert(1, out value, out unused);
+                tempColumn.Conversion.Convert(3, out value, out unused);
                 tempColumn.ValueAsString = value;
             }
 
@@ -189,11 +189,20 @@ namespace NateW.Ssm.Protocol.Test
             {
                 string value;
                 double unused;
-                tempColumn.Conversion.Convert(0, out value, out unused);
+                tempColumn.Conversion.Convert(1, out value, out unused);
                 tempColumn.ValueAsString = value;
             }
 
             filter.LogEntry(row);
+
+            foreach (LogColumn tempColumn in this.readOnlyColumns)
+            {
+                string value;
+                double unused;
+                tempColumn.Conversion.Convert(2, out value, out unused);
+                tempColumn.ValueAsString = value;
+            }
+
             filter.LogEntry(row);
 
             iteration = 3;
@@ -201,7 +210,7 @@ namespace NateW.Ssm.Protocol.Test
             {
                 string value;
                 double unused;
-                tempColumn.Conversion.Convert(1, out value, out unused);
+                tempColumn.Conversion.Convert(3, out value, out unused);
                 tempColumn.ValueAsString = value;
             }
 
@@ -213,8 +222,8 @@ namespace NateW.Ssm.Protocol.Test
             string actual = Encoding.ASCII.GetString(memoryStream1.ToArray());
             string expected =
                 "Parameter1, Parameter2, Parameter3" + Environment.NewLine +
-                "1, 0.5, 2.00" + Environment.NewLine +
-                "1, 0.5, 2.00" + Environment.NewLine;
+                "3, 1.5, 6.00" + Environment.NewLine +
+                "3, 1.5, 6.00" + Environment.NewLine;
             Assert.AreEqual(expected, actual, "first log");
 
             // Second log
@@ -222,14 +231,15 @@ namespace NateW.Ssm.Protocol.Test
             Assert.AreEqual(string.Empty, actual, "second log");
 
             // Third log
+            expected =
+                "Parameter1, Parameter2, Parameter3" + Environment.NewLine +
+                "1, 0.5, 2.00" + Environment.NewLine +
+                "2, 1.0, 4.00" + Environment.NewLine +
+                "3, 1.5, 6.00" + Environment.NewLine +
+                "3, 1.5, 6.00" + Environment.NewLine;
+
             actual = Encoding.ASCII.GetString(memoryStream3.ToArray());
-            Assert.AreEqual(expected, actual, "second log");
-        }
-
-        [TestMethod()]
-        public void LogFilterPrepend()
-        {
-
+            Assert.AreEqual(expected, actual, "third log");
         }
     }
 }

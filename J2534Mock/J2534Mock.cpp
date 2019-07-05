@@ -342,7 +342,11 @@ J2534MOCK_API long CCONV PassThruReadMsgs(
 
 	// Lenth = 8 * 7 + 6 = 62
 	int ecuInitResponseLength = 62;
-	char ecuInitResponse[] = 
+
+#pragma warning (push)
+#pragma warning (disable: 4309)
+#pragma warning (disable: 4838)
+	char ecuInitResponse[] =
             {
                 0x80, 0xF0, 0x10, 0x39, 0xFF, // 5 
                 0xA2, 0x10, 0x11, 0x2F, 0x12, 0x78, 0x52, 0x06, // 8
@@ -354,6 +358,7 @@ J2534MOCK_API long CCONV PassThruReadMsgs(
                 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xC1, 0xF0, // 8 * 7
                 0x28,  
             };
+#pragma warning (pop)
 
 	PASSTHRU_MSG *pMessage = pMsg;
 	pMessage->ProtocolId = pChannel->ProtocolId;

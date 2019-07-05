@@ -11,7 +11,7 @@ namespace NateW.Ssm
 {
     public delegate SerialPort SuspendResumePortFactory();
     public delegate void SuspendResumePortOperation(Stream stream);
-    
+
     /// <summary>
     /// Continuously writes queries to / reads responses from a serial port, handling system suspend/resume.
     /// </summary>
@@ -72,6 +72,10 @@ namespace NateW.Ssm
             this.operation = operation;
 
             this.powerModeChangedEventHandler = new Microsoft.Win32.PowerModeChangedEventHandler(SystemEvents_PowerModeChanged);
+
+#pragma warning disable CA2122
+            // Warning cannot be suppressed, see https://developercommunity.visualstudio.com/content/problem/196542/vs2017-pragma-warning-disable-not-working-for-ca-c.html
+            // Tried suppressing it at the function and class levels too, still doesn't suppress.
             Microsoft.Win32.SystemEvents.PowerModeChanged += this.powerModeChangedEventHandler;
         }
 

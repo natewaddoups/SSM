@@ -494,7 +494,7 @@ namespace NateW.Ssm
         internal static XPathDocument CreateDocument(Stream inputStream)
         {
             XmlReaderSettings settings = new XmlReaderSettings();
-            settings.ProhibitDtd = false;
+            settings.DtdProcessing = DtdProcessing.Ignore;
             //XmlParserContext context = new XmlParserContext(
             XmlReader reader = XmlReader.Create(inputStream, settings);
             System.Xml.XPath.XPathDocument document = new XPathDocument(reader);

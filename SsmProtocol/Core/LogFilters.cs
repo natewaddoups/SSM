@@ -310,6 +310,15 @@ namespace NateW.Ssm
     /// </summary>
     public class KnockLogFilter : LogFilter
     {
+        /// <summary>
+        /// Indicates whether lastValue has been initalized from log data.
+        /// This is used to avoid logging a snippet every time the log profile changes.
+        /// </summary>
+        private bool initialized = false;
+
+        /// <summary>
+        /// Last-seen value of the Knock Sum parameter.
+        /// </summary>
         private double lastValue;
 
         /// <summary>
@@ -347,10 +356,16 @@ namespace NateW.Ssm
         }
 
         /// <summary>
-        /// Log when throttle is maxed out
+        /// Log when knock sum value changes.
         /// </summary>
         protected override bool ShouldLog(LogColumn column)
         {
+            if (!initialized)
+            {
+                this.lastValue = column.ValueAsDouble;
+                return false;
+            }
+
             if (column.ValueAsDouble != this.lastValue)
             {
                 this.lastValue = column.ValueAsDouble;
